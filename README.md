@@ -18,12 +18,7 @@ This project automates the setup and deployment of MikroTik RouterOS in a Docker
 To facilitate communication between the RouterOS container, host, and the internet, create a custom Docker network with both IPv4 and IPv6 support. Run the following command on your build and deployment servers:
 
 ```bash
-docker network create
-	--driver bridge
-	--ipv6
-	--subnet 192.168.200.0/24
-	--subnet fd00:dead:beef::/64
-	ros-bridge-net
+docker network create --driver bridge --ipv6 --subnet 192.168.200.0/24 --subnet fd00:dead:beef::/64 ros-bridge-net
 ```
 
 This command creates a bridge network named `ros-bridge-net` with:
