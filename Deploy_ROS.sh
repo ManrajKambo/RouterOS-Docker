@@ -2,6 +2,8 @@
 
 version="7.16"
 
+docker network create --driver bridge --ipv6 --subnet 192.168.200.0/24 --subnet fd00:dead:beef::/64 ros-bridge-net
+
 docker stop routeros-$version
 docker rm routeros-$version
 docker rmi routeros-$version-final
