@@ -6,6 +6,8 @@ apt-get update
 apt-get -y install docker.io wget unzip
 apt-get clean
 
+docker network create --driver bridge --ipv6 --subnet 192.168.200.0/24 --subnet fd00:dead:beef::/64 ros-bridge-net
+
 # Stop and remove the existing container if it's running
 docker stop routeros-$version || true
 docker rm routeros-$version || true
